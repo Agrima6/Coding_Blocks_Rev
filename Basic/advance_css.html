@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced CSS Example</title>
+  <style>
+    /* Global Reset & Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      padding: 20px;
+    }
+
+    /* Flexbox Layout */
+    .flex-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .box {
+      width: 200px;
+      height: 150px;
+      background-color: #4a90e2;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      transition: transform 0.3s ease, background-color 0.3s;
+    }
+
+    .box:hover {
+      transform: scale(1.1);
+      background-color: #357ABD;
+    }
+
+    /* Grid Layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .grid-item {
+      background-color: #34d399;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    /* Animation Example */
+    .animated {
+      width: 100px;
+      height: 100px;
+      background-color: #f59e0b;
+      animation: bounce 1s infinite alternate;
+      border-radius: 50%;
+      margin: 20px auto;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-30px);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .box, .grid-item {
+        font-size: 14px;
+      }
+      .animated {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Advanced CSS Demo</h1>
+
+  <!-- Flexbox Section -->
+  <h2>Flexbox Layout</h2>
+  <div class="flex-container">
+    <div class="box">Flex 1</div>
+    <div class="box">Flex 2</div>
+    <div class="box">Flex 3</div>
+  </div>
+
+  <!-- Grid Section -->
+  <h2>Grid Layout</h2>
+  <div class="grid-container">
+    <div class="grid-item">Grid A</div>
+    <div class="grid-item">Grid B</div>
+    <div class="grid-item">Grid C</div>
+    <div class="grid-item">Grid D</div>
+  </div>
+
+  <!-- Animation -->
+  <h2>Bounce Animation</h2>
+  <div class="animated"></div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Position Property Example</title>
+    <style>
+        .static-box {
+            position: static;
+            background-color: lightgray;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .relative-box {
+            position: relative;
+            top: 10px;   /* moves down 10px from normal */
+            left: 20px;  /* moves right 20px from normal */
+            background-color: lightgreen;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .absolute-container {
+            position: relative;  /* ancestor for absolute */
+            background-color: #f0f0f0;
+            height: 150px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            background-color: lightcoral;
+            padding: 10px;
+            width: 150px;
+        }
+
+        .fixed-box {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: lightblue;
+            padding: 10px;
+            width: 150px;
+            z-index: 1000;
+        }
+
+        .sticky-box {
+            position: sticky;
+            top: 0;
+            background-color: orange;
+            padding: 10px;
+            font-weight: bold;
+            margin-bottom: 400px; /* just to make scrolling visible */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="static-box">Static Position (default)</div>
+
+    <div class="relative-box">Relative Position (offset from normal)</div>
+
+    <div class="absolute-container">
+        <div class="absolute-box">Absolute Position (inside relative container)</div>
+        Parent container (position: relative)
+    </div>
+
+    <div class="sticky-box">Sticky Position (sticks to top when scrolling)</div>
+
+    <div style="height: 600px; background:#eee;">Scroll down to see sticky & fixed</div>
+
+    <div class="fixed-box">Fixed Position (always visible)</div>
+
+</body>
+</html>

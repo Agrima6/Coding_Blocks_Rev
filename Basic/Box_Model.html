@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple BBox Example</title>
+  <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background-color: #eee;
+      margin: 50px auto;
+      border: 2px solid #ccc;
+    }
+
+    .bbox {
+      position: absolute;
+      top: 50px;
+      left: 60px;
+      width: 150px;
+      height: 80px;
+      border: 3px solid red;
+      color: red;
+      font-weight: bold;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">BBox (Bounding Box) Demo</h2>
+
+  <div class="container">
+    <div class="bbox">Object Detected</div>
+  </div>
+
+</body>
+</html>

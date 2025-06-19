@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All CSS Selectors Example</title>
+    <style>
+        /* Universal Selector */
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Element Selector */
+        h1 {
+            color: darkblue;
+        }
+
+        /* ID Selector */
+        #main-title {
+            text-align: center;
+            font-size: 32px;
+        }
+
+        /* Class Selector */
+        .highlight {
+            background-color: yellow;
+        }
+
+        /* Group Selector */
+        h2, p {
+            margin: 10px;
+        }
+
+        /* Descendant Selector */
+        div p {
+            color: green;
+        }
+
+        /* Child Selector */
+        ul > li {
+            color: darkred;
+        }
+
+        /* Adjacent Sibling Selector */
+        h2 + p {
+            color: orange;
+            font-style: italic;
+        }
+
+        /* Attribute Selector */
+        input[type="text"] {
+            border: 2px solid blue;
+        }
+
+        /* Pseudo-class Selector */
+        a:hover {
+            color: red;
+        }
+
+        /* Pseudo-element Selector */
+        p::first-letter {
+            font-size: 150%;
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-title">CSS Selectors Demo</h1>
+
+    <h2>Element and Class Example</h2>
+    <p class="highlight">This is a highlighted paragraph using a class.</p>
+
+    <div>
+        <p>This is a paragraph inside a div (descendant selector).</p>
+    </div>
+
+    <ul>
+        <li>Child list item 1</li>
+        <li>Child list item 2</li>
+    </ul>
+
+    <h2>Sibling Example</h2>
+    <p>This paragraph is immediately after an h2 (adjacent sibling selector).</p>
+
+    <form>
+        <input type="text" placeholder="Enter name">
+        <input type="password" placeholder="Enter password">
+    </form>
+
+    <p>Hover over this <a href="#">link</a> to see the hover effect.</p>
+
+</body>
+</html>

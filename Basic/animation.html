@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple CSS Animation</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      margin: 100px auto;
+      border-radius: 10px;
+
+      /* Animation properties */
+      animation-name: moveAndColor;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+
+    /* Define the animation */
+    @keyframes moveAndColor {
+      0% {
+        transform: translateX(0);
+        background-color: #3498db;
+      }
+      50% {
+        transform: translateX(200px);
+        background-color: #e74c3c;
+      }
+      100% {
+        transform: translateX(0);
+        background-color: #3498db;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box"></div>
+
+</body>
+</html>

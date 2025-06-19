@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Media Queries Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #a0c4ff;
+      color: #03045e;
+      transition: background-color 0.5s;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Small screens: max-width 600px */
+    @media (max-width: 600px) {
+      body {
+        background-color: #ffadad;
+        padding: 20px;
+        color: #6a040f;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    /* Medium screens: min-width 601px and max-width 900px */
+    @media (min-width: 601px) and (max-width: 900px) {
+      body {
+        background-color: #ffd6a5;
+        color: #663c00;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+    }
+
+    /* Large screens: min-width 901px */
+    @media (min-width: 901px) {
+      body {
+        background-color: #a0c4ff;
+        color: #03045e;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    /* Orientation: Portrait */
+    @media (orientation: portrait) {
+      body {
+        border: 5px solid #0077b6;
+      }
+    }
+
+    /* Orientation: Landscape */
+    @media (orientation: landscape) {
+      body {
+        border: 5px dashed #023e8a;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Responsive Media Queries</h1>
+  <p>Resize the browser width to see different background colors and font sizes for small, medium, and large screens.<br>
+  Also, rotate your device or emulator to see border styles change for portrait and landscape orientation.</p>
+
+</body>
+</html>
