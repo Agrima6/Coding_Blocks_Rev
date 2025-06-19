@@ -1,0 +1,201 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+header {
+    background-color: #000000;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 130px;
+    height: auto;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 18px;
+}
+
+nav a.active {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+header {
+    background-color: #000000;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 130px;
+    height: auto;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 18px;
+}
+
+nav a.active {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #ff4d4d;
+}
+
+p {
+    font-size: 16px;
+}
+
+.event-form {
+    background-color: #272727;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.event-form label {
+    display: block;
+    margin: 0.5rem 0 0.2rem;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.event-form input, 
+.event-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.event-form input[type="file"] {
+    background-color: #fff;
+}
+
+.submit-btn {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.submit-btn:hover {
+    background-color: #ff3333;
+}
+
+/* Event display styling */
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #272727;
+    border-radius: 8px;
+}
+
+.event-card {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left;
+    color: #fff;
+}
+
+.event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.event-card h3 {
+    margin: 0.5rem 0;
+    color: #ff4d4d;
+}
+
+.event-card p {
+    margin: 0.5rem 0;
+}
+
+.event-card button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.event-card button:hover {
+    background-color: #ff3333;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000000;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    color: #ffffff;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.social-icons a:hover {
+    color: #ff4d4d;
+}

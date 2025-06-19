@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Submission</title>
+  <link rel="stylesheet" href="event1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header>
+  <img src="logo.png" alt="PAC Logo" class="logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="AboutUs.html">About Us</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="event1.html" class="active">Events</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Submit Your Event</h1>
+  <p>Share your event with the community and let everyone know what's happening.</p>
+
+  <!-- Event Form -->
+  <form id="eventForm" enctype="multipart/form-data" class="event-form">
+    <input type="hidden" id="eventId" name="eventId">
+    <label for="title">Event Title:</label>
+    <input type="text" id="title" name="title" placeholder="Enter event title" required>
+
+    <label for="description">Event Description:</label>
+    <textarea id="description" name="description" placeholder="Enter event description" required></textarea>
+
+    <label for="image">Event Image:</label>
+    <input type="file" id="image" name="image" accept="image/*">
+
+    <button type="submit" class="submit-btn">Submit Event</button>
+  </form>
+
+  <!-- Button to toggle showing events -->
+  <h2>Submitted Events</h2>
+  <button id="showEventsButton" class="toggle-btn">Show Events</button>
+  <div id="events-container" class="events-container"></div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <img src="logo.png" alt="PAC Logo" class="logo">
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+  <p>&copy; 2024 PAC Photography Club. All rights reserved.</p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const eventForm = document.getElementById('eventForm');
+    const showEventsButton = document.getElementById('showEventsButton');
+    const eventsContainer = document.getElementById('events-container');
+    let currentEventId = null;
+
+    // Handle form submission
+    eventForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(eventForm);
+      const endpoint = currentEventId 
+        ? `http://localhost:5000/api/events/${currentEventId}`
+        : 'http://localhost:5000/api/events';
+      const method = currentEventId ? 'PUT' : 'POST';
+
+      try {
+        const response = await fetch(endpoint, { method, body: formData });
+        const result = await response.json();
+        alert(result.message || 'Event processed successfully');
+        eventForm.reset();
+        currentEventId = null;
+        showEvents();
+      } catch (error) {
+        alert('Error processing event');
+      }
+    });
+
+    // Show all events
+    showEventsButton.addEventListener('click', showEvents);
+
+    async function showEvents() {
+      try {
+        const response = await fetch('http://localhost:5000/api/events');
+        const events = await response.json();
+        eventsContainer.innerHTML = '';
+
+        if (events.length === 0) {
+          eventsContainer.innerHTML = '<p>No events to display.</p>';
+        }
+
+        events.forEach(event => {
+          const eventDiv = document.createElement('div');
+          eventDiv.className = 'event';
+          eventDiv.innerHTML = `
+            <img src="http://localhost:5000${event.image}" alt="${event.title}" class="event-image">
+            <h3>${event.title}</h3>
+            <p>${event.description}</p>
+            <button onclick="editEvent('${event._id}', '${event.title}', '${event.description}')">Update</button>
+            <button onclick="deleteEvent('${event._id}')">Delete</button>
+          `;
+          eventsContainer.appendChild(eventDiv);
+        });
+      } catch (error) {
+        alert('Error fetching events');
+      }
+    }
+
+    window.editEvent = (id, title, description) => {
+      document.getElementById('title').value = title;
+      document.getElementById('description').value = description;
+      currentEventId = id;
+    };
+
+    window.deleteEvent = async (id) => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/events/${id}`, { method: 'DELETE' });
+        const result = await response.json();
+        alert(result.message || 'Event deleted successfully');
+        showEvents();
+      } catch (error) {
+        alert('Error deleting event');
+      }
+    };
+  });
+</script>
+</body>
+</html>
